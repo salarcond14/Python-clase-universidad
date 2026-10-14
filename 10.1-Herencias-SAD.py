@@ -1,4 +1,4 @@
-from random import randint, choice
+from random import *
 
 # CLASE PADRE: Tarjeta
 class Tarjeta:
@@ -63,25 +63,28 @@ class TarjetaDebito(Tarjeta):
 class TarjetaDescuento(TarjetaCredito):
     def __init__(self, titular):
         super().__init__(titular)
-        # Seleccionar aleatoriamente un color y su beneficio asociado
-        # Colores disponibles: Azul (5%), Amarillo (7%), Naranja (10%)
+        
+        # Opciones disponibles de colores y descuentos
         colores_beneficios = [
             ("Azul", 0.05),
             ("Amarillo", 0.07),
             ("Naranja", 0.10)
         ]
-        self.__color, self.__porcentaje = choice(colores_beneficios)
+        
+        # Generar un índice aleatorio entre 0 y 2 usando randint
+        indice = randint(0, len(colores_beneficios) - 1)
+        
+        # Asignar el color y el porcentaje según el índice aleatorio obtenido
+        self.__color, self.__porcentaje = colores_beneficios[indice]
 
     def getPorcentajeDescuento(self):
         return self.__porcentaje
 
     def mostrarDescuento(self):
-        # Muestra la descripción del color y beneficio
         beneficio_porcentaje = int(self.__porcentaje * 100)
         return f"Color asignado: {self.__color} | Beneficio: {beneficio_porcentaje}% de descuento"
 
     def calcularDescuento(self):
-        # Retorna el valor numérico del porcentaje para cálculos o formato
         return self.__porcentaje * 100
 
     def __str__(self):
