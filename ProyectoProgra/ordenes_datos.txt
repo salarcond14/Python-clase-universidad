@@ -1,0 +1,22 @@
+[
+    {
+        "folio": "ORD-100",
+        "costoTotal": 2500.0,
+        "cliente": {
+            "nombre": "Santiago Alarcón",
+            "telefono": "4421112233",
+            "direccion": "Centro Histórico"
+        },
+        "tecnico": {
+            "nombre": "Luis Alvaréz",
+            "telefono": "4429998877",
+            "especialidad": "Microelectrónica"
+        },
+        "dispositivo": {
+            "marca": "Dell",
+            "modelo": "XPS 13",
+            "falla": "Pantalla rota",
+            "ram": 16
+        }
+    }
+]
